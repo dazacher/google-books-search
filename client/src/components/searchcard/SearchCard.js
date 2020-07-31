@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Row, Col, Button } from "react-bootstrap/";
+// import { Row, Col, Button } from "react-bootstrap/";
 // import Row from "react-bootstrap/Row";
 // import Col from "react-bootstrap/Col";
 import "./SearchCard.css"
 // import { Link } from "react-router-dom";
 import API from "../../utils/API";
+import { Row, Col } from 'mdbreact';
 
 // const imagecontext = require.context("../../assets/images", true)
 
@@ -29,75 +30,65 @@ function SearchCard(props) {
             .then(res => loadBooks())
             .catch(err => console.log(err));
     }
-   
-    
+
+
     return (
 
-        <Row>
-            <Row>
-                <Col lg={9}>
-                    
-                    <label className="title">
-                        {props.title}
-                    </label>
-                    <label className="bookTitle">
-                        {props.title}
-                    </label>
-                    <label className="author">
-                        {props.author}
-                    </label>
+        <Row className="rowBoarders">
+            <Col lg={12}>
+                <Row>
+                    <Col lg={8}>
 
+                        <label className="title">
+                            {props.title}
+                        </label><br></br>
+                        <label className="author">
+                            {props.author}
+                        </label>
+                    </Col>
+                    <Col lg={2} className="alignCenter">
+                        <button className="submitButton">
+                            <a className="anchorFormat"  href={props.link} target="_blank" rel="noopener noreferrer">View</a>
 
-                </Col>
-                <Col lg={3}>
-                    <Button
-                    >
-                        <a href={props.link} target="_blank">View</a>
+                        </button>
+                        </Col>
+                        <Col lg={2} className="alignCenter">
+                            {(props.save)
+                                ? <button
+                                    className="submitButton"
+                                    onClick={() => {
+                                        API.saveBookclassName = "submitButton"(
+                                            {
+                                                author: props.author,
+                                                title: props.title,
+                                                description: props.description,
+                                                image: props.image,
+                                                link: props.link
+                                            }
+                                        )
+                                    }}>
+                                    Save
+                            </button>
 
-                    </Button>
-                    if(props.saved === True) {
-                        <Button
-                            onClick={() => {
-                                API.saveBook(
-                                    {
-                                        author: props.author,
-                                        title: props.title,
-                                        description: props.description,
-                                        image: props.image,
-                                        link: props.link
-                                    }
-                                )
-                            }}
-                        >
-                            Save
-                    </Button>
-                    } else {
-                        <Button
-                            onClick={deleteBook
-                                // () => {
-                            //     API.deleteBook(
-                            //         {
-                            //             id: props.id
-                            //         }
-                            //     )
-                            // }
-                        }
-                        >
-                            Delete
-                    </Button>
-                    }
-                </Col>
-            </Row>
-            <Row>
-                <Col lg={3}>
-                    <img src={props.image} alt="test" />
-                </Col>
-                <Col lg={9}>
-                    <label>
-                        {props.description}
-                    </label>
-                </Col>
-            </Row>
+                                : <button
+                                    className="submitButton"
+                                    // color="primary"
+                                    onClick={() => { API.deleteBook({ id: props.id }) }}>
+                                    Delete
+                    </button>}
+                        </Col>
+                </Row>
+                <Row>
+                    <Col lg={3}>
+                        <img src={props.image} alt="test" />
+                    </Col>
+                    <Col lg={9}>
+                        <label>
+                            {props.description}
+                        </label>
+                    </Col>
+                </Row>
+            </Col>
         </Row>
 
     )

@@ -1,7 +1,34 @@
 .author {
-    font-size: large;
+    font-size: small;
 }
 
 .title {
-    font-size: xx-large;
+    font-size: large;
+}
+
+.rowBoarders {
+    border: solid;
+}
+
+.alignCenter {
+    text-align: center;
+}
+
+label {
+    color: blueviolet;
+}
+
+.submitButton {
+    background-color: #990099;
+    color: white;
+    left: 25px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 5px;
+}
+
+.anchorFormat {
+    color: white;
 }

@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import Input from "react-bootstrap/InputGroup";
-// import { MDBInput, Row, MDBBtn } from 'mdbreact';
 import API from "../../utils/API";
 import Container from "react-bootstrap/esm/Container";
 import SearchCard from "../searchcard/SearchCard";
@@ -38,7 +36,7 @@ function Saved() {
                                 description={item.description}
                                 image={item.image}
                                 link={item.link}
-                                save={false}
+                                // save={false}
                             />
 
                         })
