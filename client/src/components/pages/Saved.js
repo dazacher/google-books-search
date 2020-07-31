@@ -36,7 +36,6 @@ function Saved() {
                                 description={item.description}
                                 image={item.image}
                                 link={item.link}
-                                // save={false}
                             />
                         })  
                     }

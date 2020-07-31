@@ -18,17 +18,6 @@ label {
     color: blueviolet;
 }
 
-.submitButton {
-    background-color: #990099;
-    color: white;
-    left: 25px;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    padding: 5px;
-}
-
 .anchorFormat {
     color: white;
 }
