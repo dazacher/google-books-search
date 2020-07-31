@@ -1,15 +1,7 @@
 import React, { useState } from "react";
-// import { Row, Col, Button } from "react-bootstrap/";
-// import Row from "react-bootstrap/Row";
-// import Col from "react-bootstrap/Col";
 import "./SearchCard.css"
-// import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import { Row, Col } from 'mdbreact';
-
-// const imagecontext = require.context("../../assets/images", true)
-
-
 
 function SearchCard(props) {
     console.log(props);
@@ -49,7 +41,6 @@ function SearchCard(props) {
                     <Col lg={2} className="alignCenter">
                         <button className="submitButton">
                             <a className="anchorFormat"  href={props.link} target="_blank" rel="noopener noreferrer">View</a>
-
                         </button>
                         </Col>
                         <Col lg={2} className="alignCenter">
@@ -68,14 +59,14 @@ function SearchCard(props) {
                                         )
                                     }}>
                                     Save
-                            </button>
+                                    </button>
 
                                 : <button
                                     className="submitButton"
                                     // color="primary"
                                     onClick={() => { API.deleteBook({ id: props.id }) }}>
                                     Delete
-                    </button>}
+                                </button>}
                         </Col>
                 </Row>
                 <Row>
@@ -90,7 +81,6 @@ function SearchCard(props) {
                 </Row>
             </Col>
         </Row>
-
     )
 
 
