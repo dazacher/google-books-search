@@ -38,9 +38,7 @@ function Saved() {
                                 link={item.link}
                                 // save={false}
                             />
-
-                        })
-                        
+                        })  
                     }
             </Container>
         </>
