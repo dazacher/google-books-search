@@ -1,0 +1,13 @@
+.jumbotron {
+    background-image: url("../../Assets/images/colorful_abstract.jpg");
+    background-repeat: yes; 
+    background-size: cover; 
+    background-position: center;
+    width: 100%;
+}
+
+h1, h4 {
+    text-align: center;
+    font-weight: bolder;
+    color: blueviolet;
+}
