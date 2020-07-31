@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Col, Button } from "react-bootstrap/";
 // import Row from "react-bootstrap/Row";
 // import Col from "react-bootstrap/Col";
@@ -9,21 +9,34 @@ import API from "../../utils/API";
 // const imagecontext = require.context("../../assets/images", true)
 
 
+
 function SearchCard(props) {
     console.log(props);
-    // function deleteBook (id) {
-    //     API.deleteBook(id)
-    //       .then(res => loadBooks())
-    //       .catch(err => console.log(err));
-    //   }
+
+    let [result, setResult] = useState([])
+
+    // Deletes a book from the database with a given id, then reloads books from the db
+    function loadBooks() {
+        API.getSavedBooks()
+            .then(results =>
+                setResult(results.data)
+            )
+            .catch(err => console.log(err));
+    };
+
+    function deleteBook(id) {
+        API.deleteBook(id)
+            .then(res => loadBooks())
+            .catch(err => console.log(err));
+    }
+   
+    
     return (
 
         <Row>
             <Row>
                 <Col lg={9}>
-                    {/* <label>
-                        {props.link}
-                    </label> */}
+                    
                     <label className="title">
                         {props.title}
                     </label>
@@ -42,12 +55,10 @@ function SearchCard(props) {
                         <a href={props.link} target="_blank">View</a>
 
                     </Button>
-                    if(props.save)
-                    <Button
-                        
-                        onClick={() => {
-                            API
-                                .saveBook(
+                    if(props.saved === True) {
+                        <Button
+                            onClick={() => {
+                                API.saveBook(
                                     {
                                         author: props.author,
                                         title: props.title,
@@ -56,10 +67,25 @@ function SearchCard(props) {
                                         link: props.link
                                     }
                                 )
-                        }}
-                    >
-                        Save
+                            }}
+                        >
+                            Save
                     </Button>
+                    } else {
+                        <Button
+                            onClick={deleteBook
+                                // () => {
+                            //     API.deleteBook(
+                            //         {
+                            //             id: props.id
+                            //         }
+                            //     )
+                            // }
+                        }
+                        >
+                            Delete
+                    </Button>
+                    }
                 </Col>
             </Row>
             <Row>

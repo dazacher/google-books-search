@@ -67,6 +67,7 @@ function Search() {
                                 description={item.description}
                                 image={item.image}
                                 link={item.link}
+                                save={true}
                             />
 
                         })

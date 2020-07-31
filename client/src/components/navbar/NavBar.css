@@ -1,0 +1,28 @@
+/* set the background color of the navbar */
+.navbar {
+    background-color: #990099;
+    color: white;
+    padding-right: 120px;
+    width: 100%;
+}
+
+.navbar-title {
+    padding-left: 5px;
+    /* padding-top: 20px;
+    padding-bottom: 20px; */
+    margin-top:-5px; 
+    margin-bottom:-5px;
+    /* width: 250px; */
+    color:white;
+    font-weight: bold;
+    /* font-size: calc(150px + 2vmin); */
+    font-size: xx-large;
+    background-color: #990099;
+    /* font-family: 'Kalam', cursive; */
+}
+
+/* Media query to make navbar cover entire width of page on iPhone 5/SE */
+@media (max-width: 565px) {
+    .navbar-brand  {font-size: x-large;}
+    /* .navbar {width: 100%} */
+}

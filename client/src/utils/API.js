@@ -20,36 +20,23 @@ export default {
                         link: book.volumeInfo.previewLink
                     }
                 })
-                console.log(results);
-            
+                // console.log(results);
+
                 return results;
-                // resolve(results);
-                // let books = [];
-                // for (let i = 0; i <= response.data.results.length; i++) {
-                //     let book = {
 
-                //         author: response.data.results.items.volumeInfo.authors,
-                //         title: response.data.results.items.volumeInfo.title,
-                //         description: response.data.results.items.volumeInfo.description,
-                //         image: response.data.results.items.imageLinks.thumbnail,
-                //         link: response.data.results.items.selfLink
-                //     }
-                //     books.push(book);
-                
-
-                // results(books);
             })
             .catch(error => console.log(error));
-},
+    },
 
-saveBook: (book) => {
-    return axios
-    .post("/api/books", book)
+    saveBook: (book) => {
+        return axios.post("/api/books", book)
+    },
 
-},
+    getSavedBooks: () => {
+        return axios.get("/api/books")
+    },
 
-getSavedBooks: () => {
-    return axios
-    .get("/api/books")
-}
-}
+    deleteBook: (id) => {
+        return axios.delete("/api/books/" + id);
+    }
+};
