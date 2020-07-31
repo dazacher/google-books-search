@@ -57,9 +57,6 @@ function Saved() {
             .catch(error => console.log(error));
     };
 
-
-
-
     return (
         <>
             <Container>

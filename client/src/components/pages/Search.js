@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import Input from "react-bootstrap/InputGroup";
 import { MDBInput, Row, MDBBtn } from 'mdbreact';
 import API from "../../utils/API";
 import Container from "react-bootstrap/esm/Container";
@@ -12,14 +11,6 @@ function Search() {
 
     let [result, setResult] = useState([])
 
-    
-    // useEffect(() => {
-    //     // loadBooks();
-
-    // }, [])
-
-    
-    
 
     function handleInputChange(event) {
         // add code to control the components here
@@ -35,28 +26,15 @@ function Search() {
     function handleSubmit(event) {
         // add code here to post a new book to the api
         event.preventDefault();
-        // loadBooks();
+       
         API
         .getBooks(search.search)
         .then(results => {
-            console.log(results);
+            // console.log(results);
             upDateResults(results);
         })
-        // .then(results => console.log(results))
         .catch(error => console.log(error));
     }
-    // function loadBooks() {
-    //     API
-    //         .getBooks(search.search)
-    //         .then(results => {
-    //             setResult(results);
-    //         })
-    //         // .then(results => console.log(results))
-    //         .catch(error => console.log(error));
-    // };
-
-
-
 
     return (
         <>
@@ -75,7 +53,6 @@ function Search() {
                 <MDBBtn
                     color="purple"
                     onClick={handleSubmit}
-                    // onClick={loadBooks}
                 >
                     Search
                 </MDBBtn>
