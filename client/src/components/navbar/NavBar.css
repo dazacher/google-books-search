@@ -24,5 +24,4 @@
 /* Media query to make navbar cover entire width of page on iPhone 5/SE */
 @media (max-width: 565px) {
     .navbar-brand  {font-size: x-large;}
-    /* .navbar {width: 100%} */
 }

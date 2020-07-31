@@ -1,5 +1,4 @@
 import React from "react";
-// import { Col, Row, Container } from "../components/Grid";
 import { Row, Col, Container } from "react-bootstrap/";
 
 function NoMatch() {
