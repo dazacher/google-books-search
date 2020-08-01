@@ -1,5 +1,4 @@
 import React from 'react';
-// import './App.css';
 import Jumbotron from './components/jumbotron/Jumbotron';
 import NavBar from './components/navbar/NavBar';
 import Search from "./components/pages/Search";
