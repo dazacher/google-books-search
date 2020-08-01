@@ -63,7 +63,6 @@ function SearchCard(props) {
 
                                 : <button
                                     className="submitButton"
-                                    // color="primary"
                                     onClick={() => { API.deleteBook({ id: props.id }) }}>
                                     Delete
                                 </button>}
