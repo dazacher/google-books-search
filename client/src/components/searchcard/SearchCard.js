@@ -18,10 +18,12 @@ function SearchCard(props) {
     };
 
     function deleteBook(id) {
+        console.log(id)
         API.deleteBook(id)
-            .then(res => loadBooks())
+            .then(res => props.onDeleteBook())
             .catch(err => console.log(err));
     }
+
 
 
     return (
@@ -48,7 +50,7 @@ function SearchCard(props) {
                                 ? <button
                                     className="submitButton"
                                     onClick={() => {
-                                        API.saveBookclassName = "submitButton"(
+                                        API.saveBook (
                                             {
                                                 author: props.author,
                                                 title: props.title,
@@ -63,7 +65,7 @@ function SearchCard(props) {
 
                                 : <button
                                     className="submitButton"
-                                    onClick={() => { API.deleteBook({ id: props.id }) }}>
+                                    onClick={() => deleteBook(props.id)}>
                                     Delete
                                 </button>}
                         </Col>

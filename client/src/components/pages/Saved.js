@@ -24,6 +24,9 @@ function Saved() {
             .catch(error => console.log(error));
     };
 
+    function onDeleteBook () {
+        loadBooks();
+    }
     return (
         <>
             <Container>
@@ -31,11 +34,13 @@ function Saved() {
                         result.map(item => {
                             return <SearchCard
                                 key={item._id}
+                                id={item._id}
                                 author={item.author}
                                 title={item.title}
                                 description={item.description}
                                 image={item.image}
                                 link={item.link}
+                                onDeleteBook={onDeleteBook}
                             />
                         })  
                     }
