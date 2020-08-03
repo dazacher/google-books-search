@@ -83,54 +83,6 @@ function SearchCard(props) {
             </Col>
         </Row>
     )
-
-
-
-
-    // <label
-    // >
-    // </label>
-    // {/* author: book.volumeInfo.authors,
-    //                         title: book.volumeInfo.title,
-    //                         description: book.volumeInfo.description,
-    //                         image: book.volumeInfo.imageLinks.thumbnail,
-    //                         link: book.selfLink */}
-    // </Row>
-    //         <Col sm={6} md={4}>
-    //             <img responsive="true" variant="top" src={imagecontext("./" + props.image)} alt="" />
-    //         </Col>
-    //         <Col sm={6} md={4}>
-
-    //         </Col>
-    //         <ListGroup>
-    //               {books.map(book => {
-    //                 return (
-    //                   <ListGroup.Item key={book.title}>
-    //                     <a href={"/books/" + book.title}>
-    //                       <strong>
-    //                         {book.title} by {book.author}
-    //                       </strong>
-    //                     </a>
-    //                     <Button onClick={() => deleteBook(book._id)} />
-    //                   </ListGroup.Item>
-    //                 );
-    //               })}
-    //             </ListGroup>
-    //         <Col sm={6} md={4}>
-    //             <Card className="cardBody">
-    //                 <Card.Img responsive="true" variant="top" src={imagecontext("./" + props.image)} alt={props.altTag} />
-    //                 <Card.Body className="text">
-    //                     <Card.Title className="cardTitle">{props.cardTitle}</Card.Title>
-    //                     <Card.Text>
-    //                         {props.cardText}
-    //                         <br></br>
-    //                         {props.cardApplications}
-    //                     </Card.Text>
-    //                 </Card.Body>
-    //             </Card>
-    //         </Col>
-    //         </>
-    //     );
 };
 
 export default SearchCard;
