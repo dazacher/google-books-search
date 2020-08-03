@@ -2,7 +2,6 @@
   "name": "google-books-search",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dazacher.github.io/google-book-search",
   "proxy": "http://localhost:3001",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
