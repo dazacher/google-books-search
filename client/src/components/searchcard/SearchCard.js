@@ -8,15 +8,15 @@ function SearchCard(props) {
 
     let [result, setResult] = useState([])
 
-    // Deletes a book from the database with a given id, then reloads books from the db
-    function loadBooks() {
-        API.getSavedBooks()
-            .then(results =>
-                setResult(results.data)
-            )
-            .catch(err => console.log(err));
-    };
-
+    // function loadBooks() {
+        //     API.getSavedBooks()
+        //         .then(results =>
+        //             setResult(results.data)
+        //         )
+        //         .catch(err => console.log(err));
+        // };
+        
+// Deletes a book from the database with a given id, then reloads books from the db
     function deleteBook(id) {
         console.log(id)
         API.deleteBook(id)
@@ -52,7 +52,7 @@ function SearchCard(props) {
                                     onClick={() => {
                                         API.saveBook (
                                             {
-                                                author: props.author,
+                                                author: props.author.join(" "),
                                                 title: props.title,
                                                 description: props.description,
                                                 image: props.image,

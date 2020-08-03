@@ -77,7 +77,7 @@ function Search() {
                     result.map(item => {
                         return <SearchCard
                             key={item.id}
-                            author={item.author.join(" ")}
+                            author={item.author}
                             title={item.title}
                             description={item.description}
                             image={item.image}
